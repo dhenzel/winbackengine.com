@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.astro-indexnow-cache.json
+.DS_Store
+.env
+.env.local
+.env*.local
+*.pem
+*.sw?
+npm-debug.log*

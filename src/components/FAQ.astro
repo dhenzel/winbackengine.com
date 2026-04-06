@@ -1,0 +1,68 @@
+---
+const faqs = [
+  {
+    question: "How quickly will I see results?",
+    answer: "Most clients see their first booked appointments within 7 days of launch. We prioritize your highest-value lapsed customers first, so early results come fast.",
+  },
+  {
+    question: "What size business is this for?",
+    answer: "WinbackEngine works best for multi-location service businesses with 500+ lapsed customers and $50+ average transaction values. Franchise operators see the biggest impact.",
+  },
+  {
+    question: "How does the 3x ROI guarantee work?",
+    answer: "Simple: if we don't generate at least 3x your monthly investment in recovered revenue, you don't pay. We track every call, every booking, and every dollar recovered so there's full transparency.",
+  },
+  {
+    question: "Who makes the calls?",
+    answer: "Trained, dedicated human agents. Not bots, not robocalls, not automated dialers. Real people who learn your business and speak to your customers with care and professionalism.",
+  },
+  {
+    question: "What channels do you use?",
+    answer: "We focus on what works best: real phone calls from trained agents. A personal phone call has dramatically higher conversion rates than emails or texts for re-engaging lapsed customers.",
+  },
+  {
+    question: "Are the calls recorded?",
+    answer: "Yes — every single call is recorded and available for your review. Full transparency is a core part of how we operate.",
+  },
+  {
+    question: "What CRM systems do you integrate with?",
+    answer: "We integrate with Zenoti, Mindbody, Vagaro, WellnessLiving, Booker, Fresha, Phorest, MarianaTek, and more. If you use a different system, we can likely work with it — just ask.",
+  },
+  {
+    question: "What types of campaigns do you run?",
+    answer: "Our core campaigns include lapsed customer reactivation, birthday outreach, refer-a-friend, membership win-back, gift card promotions, VIP re-engagement, and seasonal campaigns. Every campaign is customized to your business.",
+  },
+  {
+    question: "Is there a long-term contract?",
+    answer: "No. Month-to-month, cancel anytime. We earn your business every month with results, not contracts.",
+  },
+  {
+    question: "Is this compliant with calling regulations?",
+    answer: "Absolutely. We're fully TCPA and CAN-SPAM compliant. Proper consent, proper timing, proper documentation. If a customer requests to opt out, we honor it immediately.",
+  },
+];
+---
+
+<section id="faq" class="py-20 sm:py-28 bg-navy-800/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Frequently Asked <span class="text-accent-green">Questions</span>
+      </h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto divide-y divide-white/5">
+      {faqs.map((faq) => (
+        <details class="group py-6">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <h3 class="text-lg font-semibold pr-4">{faq.question}</h3>
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </summary>
+          <p class="mt-3 text-gray-400 leading-relaxed">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

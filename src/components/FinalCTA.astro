@@ -1,0 +1,27 @@
+---
+import { BOOKING_URL } from '../config';
+---
+
+<section id="book" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative bg-gradient-to-br from-accent-green/10 to-accent-green/5 border border-accent-green/20 rounded-3xl p-12 sm:p-16 text-center overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-accent-green/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div class="relative">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto">
+          There's hidden revenue in your customer list. <span class="text-accent-green">Let's find it.</span>
+        </h2>
+        <p class="mt-6 text-lg text-gray-300 max-w-xl mx-auto">
+          No commitment. No setup fees. Guaranteed 3x ROI.
+        </p>
+        <div class="mt-10">
+          <a
+            href={BOOKING_URL}
+            class="inline-flex items-center px-10 py-5 bg-accent-green hover:bg-accent-green-light text-navy-900 font-bold rounded-xl transition-colors text-xl"
+          >
+            Book a Strategy Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

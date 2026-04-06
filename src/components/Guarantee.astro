@@ -1,0 +1,103 @@
+---
+import { BOOKING_URL } from '../config';
+
+const included = [
+  "Hiring & Training",
+  "Personalized Customer Outreach",
+  "Customer Success Manager",
+  "Monthly Reporting",
+  "Access to CRM",
+  "Campaign Playbooks",
+];
+---
+
+<section id="pricing" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Simple, Transparent <span class="text-accent-green">Pricing</span>
+      </h2>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        One plan. One price. 3x ROI guaranteed — or you don't pay.
+      </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
+
+      <!-- Pricing Card -->
+      <div class="bg-accent-green/5 border border-accent-green/20 rounded-2xl p-8 sm:p-10">
+        <div class="text-center mb-8">
+          <div class="text-sm font-semibold text-accent-green uppercase tracking-wider mb-4">Per Dedicated Agent</div>
+          <div class="flex items-baseline justify-center gap-1">
+            <span class="text-5xl sm:text-6xl font-extrabold text-white">$2,700</span>
+            <span class="text-lg text-gray-400">/mo</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-6 mb-8 py-4 border-y border-white/10">
+          <div class="text-center">
+            <div class="text-2xl font-bold text-white">160 hours</div>
+            <div class="text-sm text-gray-400">per month</div>
+          </div>
+          <div class="w-px h-10 bg-white/10"></div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-white">40 hours</div>
+            <div class="text-sm text-gray-400">every week</div>
+          </div>
+        </div>
+
+        <div class="space-y-3 mb-8">
+          <div class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">What's Included</div>
+          {included.map((item) => (
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-accent-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              <span class="text-gray-300">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="flex items-center gap-3 py-3 border-t border-white/10">
+          <svg class="w-5 h-5 text-accent-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+          <span class="text-gray-300">No setup fees</span>
+        </div>
+        <div class="flex items-center gap-3 pb-3 border-b border-white/10">
+          <svg class="w-5 h-5 text-accent-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+          <span class="text-gray-300">No long-term contracts</span>
+        </div>
+
+        <div class="mt-8 text-center">
+          <a
+            href={BOOKING_URL}
+            class="inline-flex items-center justify-center w-full px-8 py-4 bg-accent-green hover:bg-accent-green-light text-navy-900 font-bold rounded-xl transition-colors text-lg"
+          >
+            Book a Strategy Call
+          </a>
+        </div>
+      </div>
+
+      <!-- Guarantee Card -->
+      <div class="space-y-6">
+        <div class="bg-navy-800/50 border border-white/10 rounded-2xl p-8 text-center">
+          <div class="text-sm font-semibold text-accent-green uppercase tracking-wider mb-3">What We Deliver</div>
+          <div class="text-5xl font-extrabold text-accent-green">3x+</div>
+          <div class="text-gray-300 mt-2 text-lg">Return on investment</div>
+          <div class="mt-6 space-y-2 text-sm text-gray-400">
+            <div>Dedicated trained agents</div>
+            <div>All calls recorded & reviewable</div>
+            <div>Daily performance reports</div>
+          </div>
+        </div>
+
+        <div class="bg-navy-800/50 border border-accent-gold/20 rounded-2xl p-8 text-center">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Your Risk</div>
+          <div class="text-5xl font-extrabold text-accent-gold">$0</div>
+          <div class="text-gray-400 mt-2 text-lg">if we don't deliver</div>
+          <div class="mt-4 text-sm text-gray-400">
+            If we don't hit 3x ROI, you don't pay. It's that simple.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

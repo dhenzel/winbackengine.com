@@ -1,0 +1,64 @@
+---
+const testimonials = [
+  {
+    company: "PrettyLitter",
+    logo: "/logos/prettylitter.svg",
+    result: "$500K+",
+    resultLabel: "Revenue Recovered",
+    quote: "WinbackEngine recovered over half a million dollars in revenue from customers we thought were gone forever. The team is professional, the calls are recorded, and the results speak for themselves.",
+    role: "Customer Success Team",
+  },
+  {
+    company: "Caseproof / MemberPress",
+    logo: "/logos/caseproof.webp",
+    result: "$100K+",
+    resultLabel: "Revenue Recovered",
+    quote: "We saw a clear, measurable ROI within weeks. The dedicated agents understood our product and our customers — it felt like an extension of our team, not an outsourced call center.",
+    role: "Growth Team",
+  },
+];
+
+const trustedBy = [
+  { name: "PrettyLitter", logo: "/logos/prettylitter.svg" },
+  { name: "Caseproof", logo: "/logos/caseproof.webp" },
+  { name: "UpCoach", logo: "/logos/upcoach.svg" },
+  { name: "Recharge", logo: "/logos/recharge.svg" },
+];
+---
+
+<section id="results" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Real Results. <span class="text-accent-green">Real Revenue.</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {testimonials.map((t) => (
+        <div class="bg-navy-800/50 border border-white/5 rounded-2xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <img src={t.logo} alt={t.company} class="h-10 w-auto object-contain brightness-0 invert opacity-80" />
+          </div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-2xl font-extrabold text-accent-green">{t.result}</span>
+            <span class="text-sm text-gray-400">{t.resultLabel}</span>
+          </div>
+          <blockquote class="text-gray-300 leading-relaxed italic">
+            &ldquo;{t.quote}&rdquo;
+          </blockquote>
+          <div class="mt-4 text-sm text-gray-500">&mdash; {t.role}, {t.company}</div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-8">Trusted by</p>
+      <div class="flex flex-wrap justify-center gap-10 sm:gap-16 items-center">
+        {trustedBy.map((brand) => (
+          <img src={brand.logo} alt={brand.name} class="h-8 sm:h-10 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

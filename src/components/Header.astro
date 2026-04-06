@@ -1,0 +1,75 @@
+---
+import { BOOKING_URL } from '../config';
+
+const navLinks = [
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-extrabold tracking-tight">
+          <span class="text-white">Winback</span><span class="text-accent-green">Engine</span>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a href={link.href} class="text-sm text-gray-300 hover:text-white transition-colors font-medium">
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={BOOKING_URL}
+          class="inline-flex items-center px-5 py-2.5 bg-accent-green hover:bg-accent-green-light text-navy-900 font-semibold rounded-lg transition-colors text-sm"
+        >
+          Book a Strategy Call
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="flex items-center gap-3 md:hidden">
+        <a
+          href={BOOKING_URL}
+          class="inline-flex items-center px-4 py-2 bg-accent-green hover:bg-accent-green-light text-navy-900 font-semibold rounded-lg transition-colors text-xs"
+        >
+          Book a Call
+        </a>
+        <button id="mobile-menu-btn" type="button" class="text-gray-300 hover:text-white" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-navy-900/95 backdrop-blur-md">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
+      {navLinks.map((link) => (
+        <a href={link.href} class="mobile-nav-link text-sm text-gray-300 hover:text-white transition-colors font-medium py-2">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+    });
+  });
+</script>

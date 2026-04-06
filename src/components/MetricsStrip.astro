@@ -1,0 +1,21 @@
+---
+const metrics = [
+  { value: "Millions", label: "Revenue Recovered" },
+  { value: "3x+", label: "Guaranteed ROI" },
+  { value: "7 Days", label: "To First Results" },
+  { value: "25-40%", label: "Reactivation Rate" },
+];
+---
+
+<section class="relative border-y border-white/10 bg-navy-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      {metrics.map((metric) => (
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-accent-green">{metric.value}</div>
+          <div class="mt-1 text-sm sm:text-base text-gray-400 font-medium">{metric.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

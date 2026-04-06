@@ -1,0 +1,73 @@
+---
+const industries = [
+  "Fitness Studios", "Wax Centers", "Spas & Wellness", "Dental Practices",
+  "Med Spas", "Chiropractic", "Beauty Salons", "Pet Services",
+  "Home Services", "Multi-Location Franchises",
+];
+
+const requirements = [
+  { label: "500+ lapsed customers", description: "Enough volume to justify a dedicated agent" },
+  { label: "$50+ average transaction", description: "Economics that make outbound calls profitable" },
+  { label: "Multi-location preferred", description: "Franchise and multi-unit operators see the biggest impact" },
+];
+
+const crms = [
+  "Zenoti", "Mindbody", "Vagaro", "WellnessLiving",
+  "Booker", "Fresha", "Phorest", "MarianaTek", "and more",
+];
+---
+
+<section class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Built for <span class="text-accent-green">Service Businesses</span>
+      </h2>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        Multi-location service businesses with lapsed customers and revenue to recover.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-12">
+      <!-- Industries -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Industries We Serve</h3>
+        <div class="flex flex-wrap gap-2">
+          {industries.map((industry) => (
+            <span class="bg-navy-800/50 border border-white/5 rounded-full px-4 py-2 text-sm text-gray-300">
+              {industry}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Requirements -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Best Fit If You Have</h3>
+        <div class="space-y-4">
+          {requirements.map((req) => (
+            <div class="flex gap-3">
+              <svg class="w-5 h-5 text-accent-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+              <div>
+                <div class="font-semibold text-white text-sm">{req.label}</div>
+                <div class="text-sm text-gray-400">{req.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- CRM Integrations -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">CRM Integrations</h3>
+        <div class="flex flex-wrap gap-2">
+          {crms.map((crm) => (
+            <span class="bg-navy-800/50 border border-white/5 rounded-full px-4 py-2 text-sm text-gray-300">
+              {crm}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
