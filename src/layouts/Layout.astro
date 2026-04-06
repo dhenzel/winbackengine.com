@@ -25,6 +25,15 @@ const { title, description = "Trained human agents call your lapsed customers an
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Winback Engine",
+      "url": "https://winbackengine.com",
+      "description": "Customer reactivation service for multi-location franchises. Trained human agents call lapsed customers to rebook. 3x ROI guaranteed.",
+      "parentOrganization": { "@type": "Organization", "name": "LTVplus", "url": "https://ltvplus.com" }
+    })} />
+    <slot name="head" />
   </head>
   <body class="bg-navy-900 text-white font-sans antialiased">
     <!-- Google Tag Manager (noscript) -->
@@ -32,6 +41,8 @@ const { title, description = "Trained human agents call your lapsed customers an
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <slot />
+    <script is:inline src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="ghduJH3R7scxW31mouH7"></script>
+    <script is:inline src="/js/utm-capture.js"></script>
     <script is:inline src="/js/gtm-events.js"></script>
   </body>
 </html>

@@ -1,0 +1,73 @@
+---
+import { BOOKING_URL } from '../config';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/5 pt-16 pb-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-lg font-extrabold tracking-tight">
+            <span class="text-white">Winback</span><span class="text-accent-green">Engine</span>
+          </span>
+        </div>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">
+          Customer reactivation for multi-location franchises. Trained human agents call your lapsed customers and get them to rebook.
+        </p>
+        <a href="https://ltvplus.com" target="_blank" rel="noopener" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <span class="text-gray-600 text-xs">Powered by</span>
+          <img src="/logos/ltvplus-logo-white.png" alt="LTVplus" class="h-4 inline-block opacity-50" />
+        </a>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h4>
+        <ul class="space-y-2.5">
+          <li><a href="/#how-it-works" class="text-sm text-gray-500 hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="/#pricing" class="text-sm text-gray-500 hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="/#faq" class="text-sm text-gray-500 hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="/blog" class="text-sm text-gray-500 hover:text-white transition-colors">Blog</a></li>
+          <li><a href="/customer-churn-statistics" class="text-sm text-gray-500 hover:text-white transition-colors">Churn Statistics</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">CRM Guides</h4>
+        <ul class="space-y-2.5">
+          <li><a href="/blog/customer-reactivation-guide" class="text-sm text-gray-500 hover:text-white transition-colors">Reactivation Guide</a></li>
+          <li><a href="/blog/zenoti-customer-retention-guide" class="text-sm text-gray-500 hover:text-white transition-colors">Zenoti Retention Guide</a></li>
+          <li><a href="/blog/vagaro-customer-churn-solution" class="text-sm text-gray-500 hover:text-white transition-colors">Vagaro Churn Solution</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Get Started</h4>
+        <p class="text-sm text-gray-500 mb-4">Find out how much revenue you're leaving on the table.</p>
+        <a href={BOOKING_URL} class="inline-flex items-center px-5 py-2.5 bg-accent-green hover:bg-accent-green-light text-navy-900 font-semibold rounded-lg transition-colors text-sm">
+          Book a Strategy Call
+        </a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 pt-8 mb-8">
+      <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center">
+        <a href="/blog/why-spa-clients-never-rebook" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">Why 65% of Spa Clients Never Rebook</a>
+        <a href="/blog/customer-reactivation-guide" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">Reactivation Guide</a>
+        <a href="/blog/zenoti-customer-retention-guide" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">Zenoti Retention Guide</a>
+        <a href="/blog/vagaro-customer-churn-solution" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">Vagaro Churn Solution</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-gray-600">
+        &copy; {year} WinbackEngine. All rights reserved.
+      </div>
+      <div class="text-xs text-gray-700">
+        <a href="/rss.xml" class="hover:text-gray-500 transition-colors">RSS Feed</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script is:inline src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="ghduJH3R7scxW31mouH7"></script>
+<script is:inline src="/js/utm-capture.js"></script>

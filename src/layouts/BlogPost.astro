@@ -1,0 +1,127 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import { BOOKING_URL } from '../config';
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  author: string;
+  authorBio: string;
+  authorTitle: string;
+  image?: string;
+  tags?: string[];
+  canonical?: string;
+  slug: string;
+}
+
+const { title, description, date, author, authorBio, authorTitle, image, tags = [], canonical, slug } = Astro.props;
+const formattedDate = new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const ogImage = image ? `https://winbackengine.com${image}` : undefined;
+const canonicalUrl = canonical || `https://winbackengine.com/blog/${slug}/`;
+---
+
+<Layout title={`${title} | Winback Engine Blog`} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:site_name" content="Winback Engine" />
+    <meta property="article:published_time" content={new Date(date).toISOString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": title,
+      "description": description,
+      "author": { "@type": "Organization", "name": author },
+      "publisher": { "@type": "Organization", "name": "Winback Engine", "url": "https://winbackengine.com" },
+      "datePublished": new Date(date).toISOString(),
+      "dateModified": new Date(date).toISOString(),
+      ...(ogImage ? { "image": ogImage } : {}),
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+    })} />
+  </Fragment>
+
+  <Header />
+  <div class="h-16 sm:h-20"></div>
+  <article class="py-12 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <header class="mb-10 sm:mb-14">
+        {tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-4">
+            {tags.map((tag) => (
+              <span class="text-xs font-medium text-accent-green bg-accent-green/10 px-2.5 py-1 rounded-full">{tag}</span>
+            ))}
+          </div>
+        )}
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+          {title}
+        </h1>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <span>{author}</span>
+          <span class="w-1 h-1 bg-gray-600 rounded-full"></span>
+          <time datetime={date}>{formattedDate}</time>
+        </div>
+      </header>
+
+      {image && (
+        <div class="mb-10 sm:mb-12 -mx-4 sm:mx-0">
+          <img src={image} alt={title} class="w-full rounded-none sm:rounded-2xl object-cover" style="max-height: 400px;" loading="eager" />
+        </div>
+      )}
+
+      <div class="prose prose-invert prose-lg max-w-none
+        prose-headings:font-extrabold prose-headings:tracking-tight
+        prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:mt-12 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:sm:text-2xl prose-h3:mt-8 prose-h3:mb-3
+        prose-p:text-gray-300 prose-p:leading-relaxed
+        prose-a:text-accent-green prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-white
+        prose-blockquote:border-accent-green/30 prose-blockquote:text-gray-400
+        prose-li:text-gray-300
+        prose-img:rounded-xl
+      ">
+        <slot />
+      </div>
+
+      <aside class="mt-12 p-6 sm:p-8 bg-navy-800/50 border border-white/5 rounded-2xl">
+        <div class="flex flex-col sm:flex-row items-start gap-5">
+          <img src="/david-henzel.png" alt={author} class="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+          <div>
+            <div class="mb-1">
+              <span class="text-lg font-bold text-white">{author}</span>
+            </div>
+            <p class="text-sm text-accent-green font-medium mb-3">{authorTitle}</p>
+            <p class="text-sm text-gray-400 leading-relaxed">{authorBio}</p>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="my-12 bg-accent-green/5 border border-accent-green/20 rounded-2xl p-8 sm:p-10 text-center">
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+          Stop Losing Customers. Start Winning Them Back.
+        </h3>
+        <p class="text-gray-400 max-w-xl mx-auto mb-6">
+          Find out how much revenue you're leaving on the table with a free, no-obligation reactivation audit.
+        </p>
+        <a href={BOOKING_URL} class="inline-flex items-center px-8 py-3.5 bg-accent-green hover:bg-accent-green-light text-navy-900 font-bold rounded-lg transition-colors text-base">
+          Book Your Free Reactivation Audit &rarr;
+        </a>
+      </aside>
+
+      <div class="mt-8">
+        <a href="/blog" class="text-sm text-gray-500 hover:text-accent-green transition-colors">
+          &larr; Back to all articles
+        </a>
+      </div>
+    </div>
+  </article>
+</Layout>
