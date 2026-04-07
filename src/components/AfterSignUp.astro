@@ -1,0 +1,59 @@
+---
+const steps = [
+  {
+    day: "Day 1",
+    title: "CRM Connect & Data Import",
+    description: "We connect to your CRM (Zenoti, Mindbody, Vagaro, etc.) and pull your lapsed customer data. Same day.",
+  },
+  {
+    day: "Days 2–3",
+    title: "Campaign Design & Script Writing",
+    description: "We build your campaign: customer segments, call scripts, objection handling, and offer strategy — tailored to your business.",
+  },
+  {
+    day: "Days 4–5",
+    title: "Agent Training & Calibration",
+    description: "Your dedicated agent learns your brand, your services, and your customer profile. Test calls, feedback, refinement.",
+  },
+  {
+    day: "Day 6+",
+    title: "Calls Start, Revenue Flows",
+    description: "Your agent starts calling. Customers rebook. You see results in your CRM and our daily reports. Every call recorded.",
+  },
+];
+---
+
+<section class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        What Happens <span class="text-accent-green">After You Sign Up</span>
+      </h2>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        From sign-up to first results in under a week. Here's the timeline.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-6 top-0 bottom-0 w-px bg-accent-green/20 hidden sm:block"></div>
+
+        <div class="space-y-8">
+          {steps.map((step, i) => (
+            <div class="relative flex gap-6 items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-accent-green/10 border border-accent-green/20 rounded-xl flex items-center justify-center z-10">
+                <span class="text-accent-green font-bold text-sm">{i + 1}</span>
+              </div>
+              <div class="pb-2">
+                <div class="text-xs font-semibold text-accent-green uppercase tracking-wider mb-1">{step.day}</div>
+                <h3 class="text-lg font-bold text-white mb-1">{step.title}</h3>
+                <p class="text-gray-400 leading-relaxed">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
