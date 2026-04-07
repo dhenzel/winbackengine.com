@@ -1,13 +1,15 @@
 ---
+const LOGO_TOKEN = "pk_XXWbiTGwTfGmkCFPKmOXKg";
+
 const platforms = [
-  { name: "Zenoti", category: "Spa & Salon" },
-  { name: "Mindbody", category: "Fitness & Wellness" },
-  { name: "Vagaro", category: "Beauty & Wellness" },
-  { name: "WellnessLiving", category: "Studio Management" },
-  { name: "Booker", category: "Spa & Salon" },
-  { name: "Fresha", category: "Beauty" },
-  { name: "Phorest", category: "Salon" },
-  { name: "MarianaTek", category: "Boutique Fitness" },
+  { name: "Zenoti", domain: "zenoti.com" },
+  { name: "Mindbody", domain: "mindbodyonline.com" },
+  { name: "Vagaro", domain: "vagaro.com" },
+  { name: "WellnessLiving", domain: "wellnessliving.com" },
+  { name: "Booker", domain: "booker.com" },
+  { name: "Fresha", domain: "fresha.com" },
+  { name: "Phorest", domain: "phorest.com" },
+  { name: "MarianaTek", domain: "marianatek.com" },
 ];
 ---
 
@@ -24,9 +26,14 @@ const platforms = [
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
       {platforms.map((platform) => (
-        <div class="bg-navy-900/50 border border-white/5 rounded-xl p-5 text-center hover:border-accent-green/20 transition-colors">
-          <div class="text-lg font-bold text-white mb-1">{platform.name}</div>
-          <div class="text-xs text-gray-500">{platform.category}</div>
+        <div class="bg-navy-900/50 border border-white/5 rounded-xl p-5 flex flex-col items-center gap-3 hover:border-accent-green/20 transition-colors">
+          <img
+            src={`https://img.logo.dev/${platform.domain}?token=${LOGO_TOKEN}&format=png`}
+            alt={platform.name}
+            class="h-10 w-auto object-contain"
+            loading="lazy"
+          />
+          <div class="text-sm font-semibold text-white">{platform.name}</div>
         </div>
       ))}
     </div>
