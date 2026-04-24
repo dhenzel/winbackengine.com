@@ -210,4 +210,4 @@ For gym chains and franchise networks, reactivation has additional complexity:
 
 WinbackEngine deploys trained agents who call your lapsed gym members, handle objections, and book them back in — integrated directly with your gym management software. 3x ROI guaranteed or your money back.
 
-**[Get Your Free Reactivation Audit →](/audit)** We'll analyze your member data and show you exactly how many members you can recover and what they're worth.
+**[Get Your Free Reactivation Audit →](https://api.leadconnectorhq.com/widget/booking/1Be1vCXeKrBtUIrx4WBb)** We'll analyze your member data and show you exactly how many members you can recover and what they're worth.

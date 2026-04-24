@@ -160,4 +160,4 @@ And this doesn't account for the retention quality difference: 60–70% of human
 
 WinbackEngine deploys trained human agents backed by intelligent CRM analysis. We don't replace your tech stack — we add the human layer that makes it actually work for reactivation.
 
-**[Get Your Free Reactivation Audit →](/audit)** We'll show you exactly which lapsed customers a human conversation can bring back — and what that's worth.
+**[Get Your Free Reactivation Audit →](https://api.leadconnectorhq.com/widget/booking/1Be1vCXeKrBtUIrx4WBb)** We'll show you exactly which lapsed customers a human conversation can bring back — and what that's worth.

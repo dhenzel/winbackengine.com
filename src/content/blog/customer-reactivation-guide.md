@@ -131,7 +131,7 @@ The real opportunity is in the 15–35% who need a conversation — someone who 
 
 ### Phase 2: Campaign Design (Days 3–5)
 1. Define the offer (if any): discount, complimentary service, loyalty bonus
-2. Write call scripts for each vertical and segment (see our [Win-Back Campaign Playbook](/blog/customer-winback-campaign-playbook))
+2. Write call scripts for each vertical and segment (see our [Win-Back Campaign Playbook](/blog/winback-campaign-playbook))
 3. Set up scheduling integration so agents can book directly
 4. Define success metrics: reactivation rate, revenue recovered, cost per reactivation
 
@@ -178,7 +178,7 @@ Here's the math for a typical multi-location fitness brand:
 
 Even at conservative assumptions (20% reactivation rate, lower ACV), the ROI typically exceeds 3x. This is why WinbackEngine offers a money-back 3x ROI guarantee — the economics consistently support it.
 
-**[→ Calculate your reactivation ROI with our free tool](/tools/roi-calculator)**
+**[→ Calculate your reactivation ROI with our free tool](https://api.leadconnectorhq.com/widget/booking/1Be1vCXeKrBtUIrx4WBb)**
 
 ---
 
@@ -209,4 +209,4 @@ Even at conservative assumptions (20% reactivation rate, lower ACV), the ROI typ
 
 WinbackEngine deploys trained human agents to call your lapsed customers and get them to rebook — guaranteed 3x ROI or your money back. We integrate directly with your CRM and start delivering results within 7 days.
 
-**[Get Your Free Reactivation Audit →](/audit)** We'll analyze your CRM data and show you exactly how much revenue you're leaving on the table.
+**[Get Your Free Reactivation Audit →](https://api.leadconnectorhq.com/widget/booking/1Be1vCXeKrBtUIrx4WBb)** We'll analyze your CRM data and show you exactly how much revenue you're leaving on the table.

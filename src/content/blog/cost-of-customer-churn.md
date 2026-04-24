@@ -107,7 +107,7 @@ Total revenue from active customers ÷ number of active customers = average annu
 
 Even recovering 20% of that churn (1,800 members) at a 30% reactivation rate (540 reactivated) would recover $648,000 in annual revenue.
 
-**[→ Calculate your specific churn cost](/tools/roi-calculator)**
+**[→ Calculate your specific churn cost](https://api.leadconnectorhq.com/widget/booking/1Be1vCXeKrBtUIrx4WBb)**
 
 ---
 
@@ -179,4 +179,4 @@ The takeaway: reactivation campaigns should start at 90 days of inactivity, not 
 
 WinbackEngine recovers lapsed customers through trained human agents who call, handle objections, and rebook — with a 3x ROI guarantee. We start delivering results within 7 days of connecting to your CRM.
 
-**[Calculate Your Churn Cost →](/tools/roi-calculator)** See exactly how much revenue your lapsed customers represent.
+**[Calculate Your Churn Cost →](https://api.leadconnectorhq.com/widget/booking/1Be1vCXeKrBtUIrx4WBb)** See exactly how much revenue your lapsed customers represent.
