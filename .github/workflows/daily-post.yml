@@ -1,0 +1,90 @@
+name: Daily Blog Post
+
+on:
+  # 13:00 UTC = 09:00 ET. Adjust as needed.
+  schedule:
+    - cron: '0 13 * * *'
+
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: 'Branch to commit the generated post to. Use "test-daily-post" for verification runs; "main" triggers deploy.'
+        type: string
+        default: test-daily-post
+
+concurrency:
+  group: daily-post
+  cancel-in-progress: false
+
+jobs:
+  generate-and-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PUSH_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Determine target branch
+        id: target
+        env:
+          INPUT_BRANCH: ${{ inputs.target_branch }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            echo "branch=main" >> "$GITHUB_OUTPUT"
+          else
+            # Sanitize workflow_dispatch input — only allow safe branch characters.
+            SAFE_BRANCH=$(printf '%s' "$INPUT_BRANCH" | tr -cd 'a-zA-Z0-9/_-')
+            echo "branch=${SAFE_BRANCH:-test-daily-post}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout target branch
+        env:
+          BRANCH: ${{ steps.target.outputs.branch }}
+        run: |
+          git fetch origin "$BRANCH" || true
+          git checkout "$BRANCH" 2>/dev/null || git checkout -b "$BRANCH"
+          git pull --ff-only origin "$BRANCH" 2>/dev/null || true
+
+      - name: Generate post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-7-20250929' }}
+        run: npm run generate-post
+
+      - name: Verify Astro build still succeeds
+        run: npm run build
+
+      - name: Commit and push
+        env:
+          BRANCH: ${{ steps.target.outputs.branch }}
+        run: |
+          git config user.name "winback-bot"
+          git config user.email "winback-bot@users.noreply.github.com"
+
+          # Stage only the generated files — defense in depth in case the
+          # generator leaves stray artifacts.
+          git add src/content/blog/*.md public/blog/images/*.jpg
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit (calendar may be exhausted)."
+            exit 0
+          fi
+
+          COMMIT_MSG="Daily post: $(date -u +%Y-%m-%d)"
+          git commit -m "$COMMIT_MSG"
+          git push origin "$BRANCH"
